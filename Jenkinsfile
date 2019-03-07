@@ -15,7 +15,7 @@ pipeline {
             steps {
                 
                 script{
-                    docker.build("rebate:1")
+                    docker.build("firstt:1")
                 }
                 
             }
