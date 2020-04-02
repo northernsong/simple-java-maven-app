@@ -12,11 +12,11 @@ pipeline {
                 sh 'mvn -B -DskipTests clean install'
             }
         }
-        stage('docker build') {
-            agent {dockerfile true}          
-            steps {                
-                echo 'hello wold'
-            }
-        }
+     
     }
+}
+
+node {
+    checkout scm
+    def customImage = docker.build("my-image:${env.BUILD_ID}")
 }
